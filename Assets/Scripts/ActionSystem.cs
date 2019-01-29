@@ -34,8 +34,6 @@ public class ActionSystem : MonoBehaviour
 
     IEnumerator spawnSequence(){
         int len = Random.Range(minSequenceLength, maxSequenceLength);
-        print("Spawning sequence of length " + len);
-
         for(int i=0; i < len; i++){
             var actionObject = Instantiate(ActionPrefab, spawnPoint.position, spawnPoint.transform.rotation);
             Action action = actionObject.GetComponent<Action>();

@@ -27,9 +27,10 @@ public class Action : MonoBehaviour
     }
 
     void FixedUpdate() {
-        // if(clickBox.currentAction == this){
-        //     spriteRender.color = Color.red;
-        // }
+        if(clickBox == null) return;
+        if(clickBox.currentAction == this){
+            spriteRender.color = Color.red;
+        }
     }
 
     public void SetActionType(ActionType t){

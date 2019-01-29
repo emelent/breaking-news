@@ -6,10 +6,11 @@ public class Player : MonoBehaviour
 {
     public ClickBox clickBox;
 
+    SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -21,10 +22,12 @@ public class Player : MonoBehaviour
     void handleKeyboard(){
         if(Input.GetKeyDown(KeyCode.UpArrow)){
             if(clickBox.currentAction != null){
-                print("Got it");
+                spriteRenderer.color = Color.green;
             } else {
-                print("Nothing");
+                spriteRenderer.color = Color.red;
             }
+        } else if(Input.GetKeyUp(KeyCode.UpArrow)){
+            spriteRenderer.color = Color.white;
         }
     }
 }
