@@ -35,17 +35,18 @@ public class Action : MonoBehaviour
 
     public void SetActionType(ActionType t){
         switch(t){
-            case ActionType.RIGHT:
+            case ActionType.LEFT:
                 transform.eulerAngles = new Vector3(0, 0, 90);
                 break;
             case ActionType.DOWN:
                 transform.eulerAngles = new Vector3(0, 0, 180);
                 break;
-            case ActionType.LEFT:
+            case ActionType.RIGHT:
                 transform.eulerAngles = new Vector3(0, 0, 270);
                 break;
             default:
                 break;
         }
+        actionType = t;
     }
 }

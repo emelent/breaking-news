@@ -13,19 +13,19 @@ public class ActionSystem : MonoBehaviour
     public float sequenceDelay = 2f;
     public int minSequenceLength = 2;
     public int maxSequenceLength = 7;
-    public bool isPlaying = false;
+    public bool isActive = false;
     public ClickBox clickBox;
 
-
+    public int level = 1;
     float timeStarted;
     bool spawning = false;
-
+    float timeOfLastError;
     void Start(){
         // StartCoroutine(spawnSequence());
     }
 
     void Update(){
-        if(!spawning && isPlaying){
+        if(!spawning && isActive){
             spawning = true;
             StartCoroutine(delayedSpawn());
         }        
@@ -51,4 +51,17 @@ public class ActionSystem : MonoBehaviour
         StartCoroutine(spawnSequence());
     }
 
+    void levelUp(){
+
+    }
+
+    public void StartSystem(){
+        timeStarted = Time.time;
+        timeOfLastError = timeStarted;
+        isActive = true;
+    }
+
+    public void StopSystem(){
+        isActive = false;
+    }
 }
