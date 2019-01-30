@@ -7,6 +7,8 @@ public class Action : MonoBehaviour
     public enum ActionType{UP,DOWN,LEFT,RIGHT};
 
     public ActionType actionType = ActionType.UP;
+
+
     public float speed = 1f;
     public ClickBox clickBox { get; set; }
 
@@ -29,6 +31,8 @@ public class Action : MonoBehaviour
     void FixedUpdate() {
         if(clickBox == null) return;
         if(clickBox.currentAction == this){
+            spriteRender.color = Color.green;
+        } else if(spriteRender.color == Color.green){
             spriteRender.color = Color.red;
         }
     }
@@ -49,4 +53,5 @@ public class Action : MonoBehaviour
         }
         actionType = t;
     }
+    
 }

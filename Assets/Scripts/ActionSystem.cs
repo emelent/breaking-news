@@ -17,6 +17,9 @@ public class ActionSystem : MonoBehaviour
     public ClickBox clickBox;
 
     public int level = 1;
+
+    int combo = 0;
+    
     float timeStarted;
     bool spawning = false;
     float timeOfLastError;

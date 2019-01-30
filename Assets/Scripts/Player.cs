@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
             if(action != null && action.actionType == Action.ActionType.UP){
                 spriteRenderer.color = Color.green;
                 hit.Play();
+                clickBox.DestroyAction();
             } else {
                 spriteRenderer.color = Color.red;
                 miss.Play();
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
             if(action != null && action.actionType == Action.ActionType.DOWN){
                 spriteRenderer.color = Color.green;
                 hit.Play();
+                clickBox.DestroyAction();
             } else {
                 spriteRenderer.color = Color.red;
                 miss.Play();
@@ -55,6 +57,7 @@ public class Player : MonoBehaviour
             if(action != null && action.actionType == Action.ActionType.LEFT){
                 spriteRenderer.color = Color.green;
                 hit.Play();
+                clickBox.DestroyAction();
             } else {
                 spriteRenderer.color = Color.red;
                 miss.Play();
@@ -69,6 +72,7 @@ public class Player : MonoBehaviour
             if(action != null && action.actionType == Action.ActionType.RIGHT){
                 spriteRenderer.color = Color.green;
                 hit.Play();
+                clickBox.DestroyAction();
             } else {
                 spriteRenderer.color = Color.red;
                 miss.Play();
