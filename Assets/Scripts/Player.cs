@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public ClickBox clickBox;
     public AudioSource hit;
     public AudioSource miss;
+    public ActionSystem actionSystem;
 
     SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour
             } else {
                 spriteRenderer.color = Color.red;
                 miss.Play();
+                actionSystem.MissAction();
             }
             
             StopAllCoroutines();
@@ -47,6 +49,7 @@ public class Player : MonoBehaviour
             } else {
                 spriteRenderer.color = Color.red;
                 miss.Play();
+                actionSystem.MissAction();
             }
             
             StopAllCoroutines();
@@ -61,6 +64,7 @@ public class Player : MonoBehaviour
             } else {
                 spriteRenderer.color = Color.red;
                 miss.Play();
+                actionSystem.MissAction();
             }
             
             StopAllCoroutines();
@@ -76,6 +80,7 @@ public class Player : MonoBehaviour
             } else {
                 spriteRenderer.color = Color.red;
                 miss.Play();
+                actionSystem.MissAction();
             }
             StopAllCoroutines();
             StartCoroutine(ResetPlayerColor());

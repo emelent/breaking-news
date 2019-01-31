@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClickBox : MonoBehaviour
 {
-    public Action currentAction { get; protected set; }
+    public Action currentAction { get; set; }
     public GameObject HitParticles;
 
     void OnTriggerEnter2D(Collider2D collider) {

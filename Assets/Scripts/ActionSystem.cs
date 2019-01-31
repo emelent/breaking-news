@@ -15,7 +15,7 @@ public class ActionSystem : MonoBehaviour
     public int maxSequenceLength = 7;
     public bool isActive = false;
     public ClickBox clickBox;
-
+    public Queue<GameObject> sequence { get; set; } = new Queue<GameObject>();
     public int level = 1;
 
     int combo = 0;
@@ -43,7 +43,7 @@ public class ActionSystem : MonoBehaviour
             action.SetActionType((Action.ActionType) Random.Range(0, 4));
             action.speed = actionSpeed;
             action.clickBox = clickBox;
-        
+            sequence.Enqueue(actionObject);
             yield return new WaitForSeconds(actionSpawnDelay);
         }
         spawning = false;
@@ -56,6 +56,17 @@ public class ActionSystem : MonoBehaviour
 
     void levelUp(){
 
+    }
+
+    public void MissAction(){
+        // if(sequence.Count == 0) return;
+
+        // var gameObj = sequence.Dequeue();
+        // if(gameObj.GetComponent<Action>() == clickBox.currentAction){
+        //     clickBox.currentAction = null;
+        // }
+        // gameObj.SetActive(false);
+        // DestroyImmediate(gameObj);
     }
 
     public void StartSystem(){
